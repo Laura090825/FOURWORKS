@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhéroes</title>
+    <style>
+        body {
+            margin-left: auto;
+            margin-right: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px; /* Espacio entre las tarjetas */
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            width: 100%; /* Ajustar el ancho para que las tarjetas no se peguen */
+        }
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;/* Asegura que el contenido adicional no sobresalga de la tarjeta */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: auto; /* Permitir que la tarjeta se ajuste automáticamente */
+            margin: 5px; /* Espacio alrededor de cada tarjeta */
+            border: 5px solid; /* Borde de color */
+            animation: flame 3s infinite; /* Animación de llamas */
+            border-color: #011521;
+        }
+        .card:hover { 
+            transform: scale(1.05); /* Aumenta el tamaño al pasar el cursor */ 
+        } 
+        .selected { 
+            transform: scale(1.1); /* Aumenta el tamaño cuando está seleccionada */ 
+            
+        }
+        @keyframes flame { 
+                0% { box-shadow: 0 0 10px 0; } 
+                50% { box-shadow: 0 0 20px 10px; }
+                100% { box-shadow: 0 0 10px 0; } 
+            }
+        
+        .image {
+            height: 200px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+        }
+        .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra completamente el contenedor */
+        }
+        .content {
+            padding: 15px; /* Ajustar el padding */
+        }
+        .title {
+            font-size: 1.2em;
+            margin: 10px 0;
+            font-weight: bold; /* Poner los títulos en negrita */
+        }
+        .powers, .weaknesses {
+            margin: 10px 0;
+        }
+        .cardsuperman.image{
+        padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="card superman">
+        <div class="image"><img src="https://sm.ign.com/t/ign_es/screenshot/default/publicity-photo-superman-the-movie-20409106-1054-1_8zn8.1920.jpg" alt="Superman"></div>
+        <div class="content">
+            <div class="title">Superman</div>
+            <div class="powers"><strong>Poderes:</strong> Super fuerza, vuelo, visión de calor...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Kryptonita, magia...</div>
+        </div>
+    </div>
+
+    <div class="card wonderwoman">
+        <div class="image"><img src="afb2d78b466b819baef3598fc1e3a7df.jpg" alt="Wonder Woman"></div>
+        <div class="content">
+            <div class="title">Wonder Woman</div>
+            <div class="powers"><strong>Poderes:</strong> Super fuerza, agilidad, vuelo...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Magia oscura, flechas mágicas...</div>
+        </div>
+    </div>
+
+    <div class="card batman">
+        <div class="image"><img src="d8t28en-eb01a122-71a6-4d9b-91c3-3e7381e7a0b3.jpg" alt="Batman"></div>
+        <div class="content">
+            <div class="title">Batman</div>
+            <div class="powers"><strong>Poderes:</strong> Intelecto genio, habilidades de detective...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Humano, dependencia tecnológica...</div>
+        </div>
+    </div>
+
+    <div class="card spiderman">
+        <div class="image"><img src="spider_man_3_spiderman_3-381165300-large.jpg" alt="Spider Man"></div>
+        <div class="content">
+            <div class="title">Spider Man</div>
+            <div class="powers"><strong>Poderes:</strong> Fuerza de araña, sentido arácnido...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Familia, toxinas especiales...</div>
+        </div>
+    </div>
+
+    <div class="card ironman">
+        <div class="image"><img src="iron-man-pictures-oaohn1wqj0py50al.jpg" alt="Iron Man"></div>
+        <div class="content">
+            <div class="title">Iron Man</div>
+            <div class="powers"><strong>Poderes:</strong> Intelecto genio, armaduras avanzadas...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Dependencia de la armadura, problemas de salud...</div>
+        </div>
+    </div>
+
+    <div class="card captainamerica">
+        <div class="image"><img src="captain-america-chris-evans-captain-america-the-first-avenger-captain-wallpaper.jpg" alt="Captain America"></div>
+        <div class="content">
+            <div class="title">Captain America</div>
+            <div class="powers"><strong>Poderes:</strong> Fuerza mejorada, experto en combate...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Humano mejorado, ideales rígidos...</div>
+        </div>
+    </div>
+
+    <div class="card thor">
+        <div class="image"><img src="thor-love-and-thunder-poster-de-personaje-10092.jpg" alt="Thor"></div>
+        <div class="content">
+            <div class="title">Thor</div>
+            <div class="powers"><strong>Poderes:</strong> Control del trueno, fuerza sobrehumana...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Dependencia de Mjölnir, arrogancia...</div>
+        </div>
+    </div>
+
+    <div class="card hulk">
+        <div class="image"><img src="whatspaper-72.jpg" alt="Hulk"></div>
+        <div class="content">
+            <div class="title">Hulk</div>
+            <div class="powers"><strong>Poderes:</strong> Fuerza ilimitada, curación acelerada...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Control emocional, mente de Bruce Banner...</div>
+        </div>
+    </div>
+
+    <div class="card blackpanther">
+        <div class="image"><img src="black-panther-movie-2018-artwork-94-2160x3840.jpg" alt="Black Panther"></div>
+        <div class="content">
+            <div class="title">Black Panther</div>
+            <div class="powers"><strong>Poderes:</strong> Fuerza mejorada, traje de vibranium...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Dependencia de la hierba corazón, tecnología...</div>
+        </div>
+    </div>
+
+    <div class="card aquaman">
+        <div class="image"><img src="aquaman_2018_by_hz_designs_dcta6d4-fullview.png" alt="Aquaman"></div>
+        <div class="content">
+            <div class="title">Aquaman</div>
+            <div class="powers"><strong>Poderes:</strong> Fuerza bajo el agua, comunicación marina...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Deshidratación, contaminantes...</div>
+        </div>
+    </div>
+
+    <div class="card flash">
+        <div class="image"><img src="The_Flash_DCEU.jpg" alt="Flash"></div>
+        <div class="content">
+            <div class="title">Flash</div>
+            <div class="powers"><strong>Poderes:</strong> Velocidad sobrehumana, viaje en el tiempo...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Fuerzas de velocidad, consumo energético...</div>
+        </div>
+    </div>
+
+        <div class="card Supergirl">
+             <div class="image"><img src="Supergirl_season_2_character_portrait.jpg" alt="SuperGirl"></div>
+            <div class="content"> 
+            <div class="title">Supergirl</div>
+            <div class="powers"><strong>Poderes:</strong> Super fuerza, vuelo, visión de calor...</div>
+            <div class="weaknesses"><strong>Debilidades:</strong> Kryptonita, magia, radiación solar roja...</div>
+         </div>
+         </div>
+         </body>
+        </html>
