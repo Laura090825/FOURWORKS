@@ -7,13 +7,15 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            margin: 20px;
+            margin: 20px auto; /* Centra el body horizontalmente y añade margen arriba/abajo */
             background-color: #f4f4f4;
-            display: flex;
-            flex-wrap: wrap;
+            display: grid; /* Usamos Grid Layout */
+            grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho */
+            gap: 30px; /* Espacio entre las cards */
+            padding: 20px; /* Añade espacio alrededor de la cuadrícula */
+            justify-content: center; /* Centra las cards si el contenido es menor que el ancho del body */
+            align-items: stretch; /* Hace que las cards se estiren para tener la misma altura */
 
-            justify-content: center;
-            gap: 30px;
         }
 
         .card {
@@ -21,9 +23,10 @@
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            width: 300px;
+            width: 100%; /* Las cards ocupan el 100% del ancho de su celda */
             transition: transform 0.3s ease-in-out;
-            grid-template-columns: repeat(3, 1fr) ;
+            display: flex; /* Añadimos flex para controlar el contenido interno */
+            flex-direction: column; /* Apilamos el contenido verticalmente */
         }
 
         .card:hover {
@@ -40,6 +43,10 @@
         .card-content {
             padding: 20px;
             text-align: center;
+            flex-grow: 1; /* Permite que el contenido crezca para ocupar el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Espacia el contenido internamente */
         }
 
         .card-title {
