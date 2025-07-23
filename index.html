@@ -73,24 +73,31 @@
         .profile-name {
             color: white;
             font-size: 2.5rem;
-            font-weight: 300;
+            font-weight: 600; /* Aumentado de 300 a 600 */
             margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra más fuerte */
         }
 
         .profile-title {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            font-weight: 400;
+            color: white; /* Cambiado de rgba a blanco puro */
+            font-size: 1.3rem; /* Aumentado de 1.2rem */
+            font-weight: 500; /* Aumentado de 400 a 500 */
             margin-bottom: 1rem;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8); /* Sombra añadida */
         }
 
         .profile-description {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-            line-height: 1.6;
+            color: white; /* Cambiado de rgba a blanco puro */
+            font-size: 1.1rem; /* Aumentado de 1rem */
+            font-weight: 400; /* Añadido peso de fuente */
+            line-height: 1.7; /* Aumentado de 1.6 */
             max-width: 600px;
             margin: 0 auto;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Sombra añadida */
+            background: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente */
+            padding: 1.5rem; /* Padding añadido */
+            border-radius: 15px; /* Bordes redondeados */
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
         }
 
         /* Projects Section */
@@ -201,8 +208,8 @@
 
         /* Footer */
         .footer {
-            background: rgba(0, 0, 0, 0.2);
-            color: rgba(255, 255, 255, 0.8);
+            background: rgba(0, 0, 0, 0.3); /* Fondo más oscuro */
+            color: white; /* Color blanco puro */
             text-align: center;
             padding: 2rem;
             backdrop-filter: blur(10px);
@@ -211,26 +218,36 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            gap: 1.5rem; /* Más espacio entre íconos */
+            margin-bottom: 1.5rem;
         }
 
         .social-link {
             display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            width: 50px; /* Más grande */
+            height: 50px; /* Más grande */
+            background: rgba(255, 255, 255, 0.2); /* Fondo más visible */
             border-radius: 50%;
-            line-height: 40px;
+            line-height: 50px; /* Ajustado al nuevo tamaño */
             text-align: center;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
+            font-size: 1.5rem; /* Emoticonos más grandes */
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Borde añadido */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para emoticonos */
         }
 
         .social-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.4); /* Más visible al hover */
+            transform: translateY(-3px) scale(1.1); /* Efecto más pronunciado */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .footer p {
+            font-size: 1rem; /* Texto del footer más grande */
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         /* Responsive Design */
@@ -255,6 +272,18 @@
             .profile-container {
                 padding: 0 1rem;
             }
+
+            .profile-description {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .social-link {
+                width: 45px;
+                height: 45px;
+                line-height: 45px;
+                font-size: 1.3rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -271,6 +300,18 @@
             .card-content {
                 padding: 1rem;
             }
+
+            .profile-description {
+                font-size: 0.95rem;
+                padding: 1rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                line-height: 40px;
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -279,14 +320,14 @@
     <header class="header">
         <div class="profile-container">
             <div class="profile-photo" onclick="document.getElementById('photoInput').click()">
-                <input type="file" id="photoInput" accept="image/*" onchange="changePhoto(event)">
+                <input type="file" id="photoInput" accept="https://scontent.feoh3-1.fna.fbcdn.net/v/t39.30808-6/476075244_544512858635424_2277800646740429711_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=86c6b0&_nc_eui2=AeG_BH67Dwxasi0pnUtrLcdtgT34zYmnXi2BPfjNiadeLUtXC9dRPP6iBPQP0Wmu8OOUdnZ5dJMQ1kDLSmm79wFB&_nc_ohc=zxHCTWJjcqUQ7kNvwFtYgmD&_nc_oc=Adkebi4F74kW-44geS_koJfjsfOGvXD7ZSaUuvd5O4s40eXz8Nugs6Kz4whqvYmIegIbrvCZoRB-CRVfxjTO0UNG&_nc_zt=23&_nc_ht=scontent.feoh3-1.fna&_nc_gid=tVrqXCLF2VY2D1NWXNiAjw&oh=00_AfTVuY0zwRJLH-UziCrCIyU3gn04hAfAdt2PKv3hruCInA&oe=6887422A" onchange="changePhoto(event)">
                 <span id="photoPlaceholder">📷</span>
             </div>
             <h1 class="profile-name">Laura</h1>
             <p class="profile-title">Desarrolladora Frontend & Diseñadora Web</p>
             <p class="profile-description">
                 Apasionada por crear experiencias digitales únicas y funcionales. 
-               AAprendiz en Desarrollo de Software, con un enfoque en diseño intuitivo y código limpio.
+               Aprendiz en Desarrollo de Software, con un enfoque en diseño intuitivo y código limpio.
                 Siempre buscando nuevos desafíos y oportunidades para crecer.
             </p>
         </div>
