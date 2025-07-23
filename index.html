@@ -3,205 +3,424 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cards Expresivas</title>
+    <title>Laura - Portafolio</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 20px auto; /* Centra el body horizontalmente y añade margen arriba/abajo */
-            background-color: #f4f4f4;
-            display: grid; /* Usamos Grid Layout */
-            grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual ancho por defecto */
-            gap: 30px; /* Espacio entre las cards */
-            padding: 20px; /* Añade espacio alrededor de la cuadrícula */
-            justify-content: center; /* Centra las cards si el contenido es menor que el ancho del body */
-            align-items: stretch; /* Hace que las cards se estiren para tener la misma altura */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        /* Header Section */
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-photo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-photo input {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-name {
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-title {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+
+        .profile-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 3rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            justify-content: center;
         }
 
         .card {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             overflow: hidden;
-            width: 100%; /* Las cards ocupan el 100% del ancho de su celda */
-            transition: transform 0.3s ease-in-out;
-            display: flex; /* Añadimos flex para controlar el contenido interno */
-            flex-direction: column; /* Apilamos el contenido verticalmente */
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
 
         .card-image {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
         }
 
         .card-content {
-            padding: 20px;
+            padding: 1.5rem;
             text-align: center;
-            flex-grow: 1; /* Permite que el contenido crezca para ocupar el espacio restante */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Espacia el contenido internamente */
         }
 
         .card-title {
-            font-size: 1.5em;
+            font-size: 1.4rem;
             color: #333;
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
         .card-description {
             color: #666;
             line-height: 1.6;
-            margin-bottom: 15px;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
         }
 
         .card-button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #007bff;
+            padding: 12px 24px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
         }
 
         .card-button:hover {
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* Estilos específicos para cada card para darles un toque único */
-        .card:nth-child(1) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://images.hdqwalls.com/wallpapers/dc-superheroes-ji.jpg'); background-size: cover; }
-        .card:nth-child(2) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://s3.eu-west-3.amazonaws.com/reimagine.pro/wp-content/uploads/2022/07/20094854/Vn_XPCuE8ys.jpg'); background-size: cover; }
-        .card:nth-child(3) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://modelocurriculum.net/wp-content/uploads/2023/10/lenguaje-a-utilizar-cv.jpg'); background-size: cover; }
-        .card:nth-child(4) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://thevalleyofcode.com/images/og/vercel.png'); background-size: cover; }
-        .card:nth-child(5) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://edit.org/img/blog/kad-1024-plantillas-banners-tienda-bolsos-online.jpg'); background-size: cover; }
-        .card:nth-child(6) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://thumbnails.genial.ly/5fd904cb6600390f7495e37d/pdf/eee672d4-f7ff-4728-902d-618d59fea815.png'); background-size: cover; }
-        .card:nth-child(7) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://images6.alphacoders.com/475/475761.jpg'); background-size: cover; }
-         .card:nth-child(8) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2018/05/restaurantes-en-la-CDMX-para-una-comida-de-negocios-jg-grill.jpg?resize=1170%2C780&ssl=1'); background-size: cover; }
-         .card:nth-child(9) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://png.pngtree.com/illustration/20220705/ourlarge/pngtree-veterinary-clinic-doctor-examining-image_78614.png'); background-size: cover; }
-        .card:nth-child(10) .card-image { background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), url('https://alesalvarredy.github.io/JuegoDelAhorcadoAlura/imagenes/ale%20titulo.png'); background-size: cover; }
-        /* Media queries para la responsividad */
+        /* Specific card images */
+        .card:nth-child(1) .card-image { background-image: url('https://images.hdqwalls.com/wallpapers/dc-superheroes-ji.jpg'); }
+        .card:nth-child(2) .card-image { background-image: url('https://s3.eu-west-3.amazonaws.com/reimagine.pro/wp-content/uploads/2022/07/20094854/Vn_XPCuE8ys.jpg'); }
+        .card:nth-child(3) .card-image { background-image: url('https://modelocurriculum.net/wp-content/uploads/2023/10/lenguaje-a-utilizar-cv.jpg'); }
+        .card:nth-child(4) .card-image { background-image: url('https://thevalleyofcode.com/images/og/vercel.png'); }
+        .card:nth-child(5) .card-image { background-image: url('https://edit.org/img/blog/kad-1024-plantillas-banners-tienda-bolsos-online.jpg'); }
+        .card:nth-child(6) .card-image { background-image: url('https://thumbnails.genial.ly/5fd904cb6600390f7495e37d/pdf/eee672d4-f7ff-4728-902d-618d59fea815.png'); }
+        .card:nth-child(7) .card-image { background-image: url('https://images6.alphacoders.com/475/475761.jpg'); }
+        .card:nth-child(8) .card-image { background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2018/05/restaurantes-en-la-CDMX-para-una-comida-de-negocios-jg-grill.jpg?resize=1170%2C780&ssl=1'); }
+        .card:nth-child(9) .card-image { background-image: url('https://png.pngtree.com/illustration/20220705/ourlarge/pngtree-veterinary-clinic-doctor-examining-image_78614.png'); }
+        .card:nth-child(10) .card-image { background-image: url('https://alesalvarredy.github.io/JuegoDelAhorcadoAlura/imagenes/ale%20titulo.png'); }
 
-        /* Para pantallas entre 300px y 529px */
-        @media (min-width: 300px) and (max-width: 529px) {
-            body {
-                grid-template-columns: 1fr; /* Una sola columna */
+        /* Footer */
+        .footer {
+            background: rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            line-height: 40px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .profile-name {
+                font-size: 2rem;
             }
-            .card {
-                margin-bottom: 20px; /* Añade un poco de espacio entre las cards en vertical */
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .projects-section {
+                padding: 2rem 1rem;
+            }
+            
+            .profile-container {
+                padding: 0 1rem;
             }
         }
 
-        /* Para pantallas entre 400px y 529px */
-        @media (min-width: 400px) and (max-width: 529px) {
-            body {
-                grid-template-columns: 1fr; /* Mantiene una sola columna (ya definido en el rango anterior) */
+        @media (max-width: 480px) {
+            .profile-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
             }
-        }
-
-        /* Para pantallas entre 529px y 1000px */
-        @media (min-width: 529px) and (max-width: 1000px) {
-            body {
-                grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+            
+            .profile-name {
+                font-size: 1.8rem;
+            }
+            
+            .card-content {
+                padding: 1rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">SUPERHEROES</h2>
-            <p class="card-description">Los superhéroes son individuos extraordinarios con habilidades especiales que luchan contra el mal para proteger a otros. Su valentía inspira esperanza.</p>
-            <a href="https://laura090825.github.io/CARD/" class="card-button">Leer Más</a>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="profile-container">
+            <div class="profile-photo" onclick="document.getElementById('photoInput').click()">
+                <input type="file" id="photoInput" accept="image/*" onchange="changePhoto(event)">
+                <span id="photoPlaceholder">📷</span>
+            </div>
+            <h1 class="profile-name">Laura</h1>
+            <p class="profile-title">Desarrolladora Frontend & Diseñadora Web</p>
+            <p class="profile-description">
+                Apasionada por crear experiencias digitales únicas y funcionales. 
+                Especializada en desarrollo frontend con un enfoque en diseño intuitivo y código limpio.
+                Siempre buscando nuevos desafíos y oportunidades para crecer profesionalmente.
+            </p>
         </div>
-    </div>
+    </header>
 
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">¿QUIEN SOY?</h2>
-            <p class="card-description">Mis valores fundamentales son mi brújula, mis vivencias me han moldeado y mis sueños son el motor que impulsa mis aspiraciones. Estos tres pilares son esenciales para comprender mi identidad y la dirección que quiero seguir en la vida.</p>
-            <a href="https://laura090825.github.io/QUIENSOY/" class="card-button">Leer Más</a>
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <h2 class="section-title">Mis Proyectos</h2>
+        <div class="cards-grid">
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">SUPERHÉROES</h3>
+                    <p class="card-description">Los superhéroes son individuos extraordinarios con habilidades especiales que luchan contra el mal para proteger a otros. Su valentía inspira esperanza.</p>
+                    <a href="https://laura090825.github.io/CARD/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">¿QUIÉN SOY?</h3>
+                    <p class="card-description">Mis valores fundamentales son mi brújula, mis vivencias me han moldeado y mis sueños son el motor que impulsa mis aspiraciones.</p>
+                    <a href="https://laura090825.github.io/QUIENSOY/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">CURRÍCULUM</h3>
+                    <p class="card-description">Tu currículum es como una breve historia de tu vida profesional. Destaca experiencias laborales relevantes y habilidades clave.</p>
+                    <a href="https://laura090825.github.io/CURRICULUMM/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">VIDEO VERCEL</h3>
+                    <p class="card-description">Vercel es una plataforma cloud rápida y fácil para desplegar webs modernas, optimizada para frameworks como React y Next.js.</p>
+                    <a href="https://youtu.be/Th1XA5SYZZA" class="card-button">Ver Video</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">PÁGINA DE BOLSOS</h3>
+                    <p class="card-description">Mi página de bolsos ofrece una cuidada selección de estilos para cada ocasión, con calidad y diseño como prioridades.</p>
+                    <a href="https://laura090825.github.io/PAGINABOLSOS/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">FORMULARIO</h3>
+                    <p class="card-description">Un formulario web permite a los usuarios ingresar información a través de campos para interactuar con un sitio. Esencial para la comunicación en línea.</p>
+                    <a href="https://laura090825.github.io/FORMULARIO/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">TARJETA POKÉMON</h3>
+                    <p class="card-description">Un universo lleno de criaturas fascinantes con poderes únicos. ¡Atrápalos a todos y conviértete en un maestro Pokémon!</p>
+                    <a href="https://laura090825.github.io/Tarjeta-Pok-mon/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">RESTAURANTE-CRUD-MESAS</h3>
+                    <p class="card-description">Restaurante Las Flores es un lugar acogedor donde la buena comida se une con la tecnología. Sistema CRUD eficiente para gestión de mesas.</p>
+                    <a href="https://formulario-crud-mu.vercel.app/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">VETERINARIA</h3>
+                    <p class="card-description">En "Dando Amor", cada paciente recibe el cariño y la dedicación que se merece, garantizando su bienestar y una vida plena junto a sus familias.</p>
+                    <a href="https://veterinaria-kohl.vercel.app/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-image"></div>
+                <div class="card-content">
+                    <h3 class="card-title">AHORCADO</h3>
+                    <p class="card-description">Un clásico reinventado con Vue: categorías, niveles y estilo propio. ¡Adivina o Muere!</p>
+                    <a href="https://ahorcado-gules-pi.vercel.app/" class="card-button">Ver Proyecto</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">CURRICULUM</h2>
-            <p class="card-description">Tu currículum es como una breve historia de tu vida profesional. En él se destacan tus experiencias laborales más relevantes y las habilidades clave que te hacen un candidato valioso, ofreciendo una visión concisa de tu trayectoria y potencial.</p>
-            <a href="https://laura090825.github.io/CURRICULUMM/" class="card-button">Leer Más</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="#" class="social-link">📧</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐙</a>
+            <a href="#" class="social-link">📱</a>
         </div>
-    </div>
+        <p>&copy; 2025 Laura. Todos los derechos reservados.</p>
+    </footer>
 
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">VIDEO VERCEL</h2>
-            <p class="card-description">Vercel es una plataforma cloud rápida y fácil para desplegar webs modernas, optimizada para frameworks como React y Next.js. Facilita la implementación y ofrece alto rendimiento.</p>
-            <a href="https://youtu.be/Th1XA5SYZZA" class="card-button">Leer Más</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">PAGINA DE BOLSOS</h2>
-            <p class="card-description">Mi página de bolsos ofrece una cuidada selección de estilos para cada ocasión, con calidad y diseño como prioridades. Encontrar el bolso perfecto es fácil y rápido.</p>
-            <a href="https://laura090825.github.io/PAGINABOLSOS/" class="card-button">Leer Más</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">FORMULARIO</h2>
-            <p class="card-description">Un formulario web permite a los usuarios ingresar información a través de campos para interactuar con un sitio. Esencial para la comunicación en línea.</p>
-            <a href="https://laura090825.github.io/FORMULARIO/" class="card-button">Leer Más</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-image"></div>
-        <div class="card-content">
-            <h2 class="card-title">TARJETA POKÉMON</h2>
-            <p class="card-description">Un universo lleno de criaturas fascinantes con poderes únicos. ¡Atrápalos a todos y conviértete en un maestro Pokémon!</p>
-            <a href="https://laura090825.github.io/Tarjeta-Pok-mon/" class="card-button">Leer Más</a>
-        </div>
-    </div>
-
-    <div class="card">
-    <div class="card-image"></div>
-    <div class="card-content">
-        <h2 class="card-title">RESTAURANTE-CRUD-MESAS</h2>
-        <p class="card-description">Restaurante Las Florez es un lugar acogedor donde la buena comida se une con la tecnología. Con nuestro sistema CRUD de mesas, gestionamos las reservas de forma eficiente, brindando una experiencia excelente a nuestros comensales.</p>
-        <a href="https://formulario-crud-mu.vercel.app/" class="card-button">Leer Más</a>
-    </div>
-</div>
-
-    <div class="card">
-    <div class="card-image"></div>
-    <div class="card-content">
-        <h2 class="card-title">VETERINARIA</h2>
-        <p class="card-description">En "Dando Amor", cada paciente recibe el cariño y la dedicación que se merece, garantizando su bienestar y una vida plena junto a sus familias. ¡Tu mascota es parte de nuestra familia!</p>
-        <a href="https://veterinaria-kohl.vercel.app/" class="card-button">Leer Más</a>
-    </div>
-</div>
- <div class="card">
-    <div class="card-image"></div>
-    <div class="card-content">
-        <h2 class="card-title">AHORCADO</h2>
-        <p class="card-description"> Un clásico reinventado con Vue: categorías, niveles,  y estilo propio. ¡Adivina o Muere!</p>
-        <a href="https://ahorcado-gules-pi.vercel.app/" class="card-button">Leer Más</a>
-    </div>
-</div>
+    <script>
+        function changePhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const profilePhoto = document.querySelector('.profile-photo');
+                    const placeholder = document.getElementById('photoPlaceholder');
+                    
+                    // Create img element
+                    let img = profilePhoto.querySelector('img');
+                    if (!img) {
+                        img = document.createElement('img');
+                        profilePhoto.appendChild(img);
+                    }
+                    
+                    img.src = e.target.result;
+                    placeholder.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
 </body>
 </html>
