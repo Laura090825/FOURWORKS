@@ -66,41 +66,34 @@
             cursor: pointer;
         }
 
-        .profile-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
         .profile-name {
             color: white;
             font-size: 2.5rem;
-            font-weight: 600; /* Aumentado de 300 a 600 */
+            font-weight: 600;
             margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Sombra más fuerte */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
 
         .profile-title {
-            color: white; /* Cambiado de rgba a blanco puro */
-            font-size: 1.3rem; /* Aumentado de 1.2rem */
-            font-weight: 500; /* Aumentado de 400 a 500 */
+            color: white;
+            font-size: 1.3rem;
+            font-weight: 500;
             margin-bottom: 1rem;
-            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8); /* Sombra añadida */
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.8);
         }
 
         .profile-description {
-            color: white; /* Cambiado de rgba a blanco puro */
-            font-size: 1.1rem; /* Aumentado de 1rem */
-            font-weight: 400; /* Añadido peso de fuente */
-            line-height: 1.7; /* Aumentado de 1.6 */
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.7;
             max-width: 600px;
             margin: 0 auto;
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Sombra añadida */
-            background: rgba(0, 0, 0, 0.2); /* Fondo semi-transparente */
-            padding: 1.5rem; /* Padding añadido */
-            border-radius: 15px; /* Bordes redondeados */
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Borde sutil */
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         /* Projects Section */
@@ -197,22 +190,23 @@
             box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
         }
 
-        /* Specific card images */
-        .card:nth-child(1) .card-image { background-image: url('https://images.hdqwalls.com/wallpapers/dc-superheroes-ji.jpg'); }
-        .card:nth-child(2) .card-image { background-image: url('https://s3.eu-west-3.amazonaws.com/reimagine.pro/wp-content/uploads/2022/07/20094854/Vn_XPCuE8ys.jpg'); }
-        .card:nth-child(3) .card-image { background-image: url('https://modelocurriculum.net/wp-content/uploads/2023/10/lenguaje-a-utilizar-cv.jpg'); }
-        .card:nth-child(4) .card-image { background-image: url('https://thevalleyofcode.com/images/og/vercel.png'); }
-        .card:nth-child(5) .card-image { background-image: url('https://edit.org/img/blog/kad-1024-plantillas-banners-tienda-bolsos-online.jpg'); }
-        .card:nth-child(6) .card-image { background-image: url('https://thumbnails.genial.ly/5fd904cb6600390f7495e37d/pdf/eee672d4-f7ff-4728-902d-618d59fea815.png'); }
-        .card:nth-child(7) .card-image { background-image: url('https://images6.alphacoders.com/475/475761.jpg'); }
-        .card:nth-child(8) .card-image { background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2018/05/restaurantes-en-la-CDMX-para-una-comida-de-negocios-jg-grill.jpg?resize=1170%2C780&ssl=1'); }
-        .card:nth-child(9) .card-image { background-image: url('https://png.pngtree.com/illustration/20220705/ourlarge/pngtree-veterinary-clinic-doctor-examining-image_78614.png'); }
-        .card:nth-child(10) .card-image { background-image: url('https://alesalvarredy.github.io/JuegoDelAhorcadoAlura/imagenes/ale%20titulo.png'); }
+        /* Específicas */
+        .superheroes { background-image: url('https://images.hdqwalls.com/wallpapers/dc-superheroes-ji.jpg'); }
+        .quiensoy { background-image: url('https://s3.eu-west-3.amazonaws.com/reimagine.pro/wp-content/uploads/2022/07/20094854/Vn_XPCuE8ys.jpg'); }
+        .curriculum { background-image: url('https://modelocurriculum.net/wp-content/uploads/2023/10/lenguaje-a-utilizar-cv.jpg'); }
+        .vercel { background-image: url('https://thevalleyofcode.com/images/og/vercel.png'); }
+        .bolsos { background-image: url('https://edit.org/img/blog/kad-1024-plantillas-banners-tienda-bolsos-online.jpg'); }
+        .formulario { background-image: url('https://thumbnails.genial.ly/5fd904cb6600390f7495e37d/pdf/eee672d4-f7ff-4728-902d-618d59fea815.png'); }
+        .pokemon { background-image: url('https://images6.alphacoders.com/475/475761.jpg'); }
+        .restaurante { background-image: url('https://i0.wp.com/foodandpleasure.com/wp-content/uploads/2018/05/restaurantes-en-la-CDMX-para-una-comida-de-negocios-jg-grill.jpg?resize=1170%2C780&ssl=1'); }
+        .veterinaria { background-image: url('https://png.pngtree.com/illustration/20220705/ourlarge/pngtree-veterinary-clinic-doctor-examining-image_78614.png'); }
+        .ahorcado { background-image: url('https://alesalvarredy.github.io/JuegoDelAhorcadoAlura/imagenes/ale%20titulo.png'); }
+        .comida-rapida { background-image: url('https://vivirenelmundo.com/wp-content/uploads/2016/11/comida-rapida.jpg'); }
 
         /* Footer */
         .footer {
-            background: rgba(0, 0, 0, 0.3); /* Fondo más oscuro */
-            color: white; /* Color blanco puro */
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
             text-align: center;
             padding: 2rem;
             backdrop-filter: blur(10px);
@@ -221,218 +215,72 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem; /* Más espacio entre íconos */
+            gap: 1.5rem;
             margin-bottom: 1.5rem;
         }
 
         .social-link {
             display: inline-block;
-            width: 50px; /* Más grande */
-            height: 50px; /* Más grande */
-            background: rgba(255, 255, 255, 0.2); /* Fondo más visible */
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 50%;
-            line-height: 50px; /* Ajustado al nuevo tamaño */
+            line-height: 50px;
             text-align: center;
             color: white;
             text-decoration: none;
             transition: all 0.3s ease;
-            font-size: 1.5rem; /* Emoticonos más grandes */
-            border: 2px solid rgba(255, 255, 255, 0.3); /* Borde añadido */
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para emoticonos */
+            font-size: 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .social-link:hover {
-            background: rgba(255, 255, 255, 0.4); /* Más visible al hover */
-            transform: translateY(-3px) scale(1.1); /* Efecto más pronunciado */
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px) scale(1.1);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .footer p {
-            font-size: 1rem; /* Texto del footer más grande */
-            font-weight: 400;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .profile-name {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .cards-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            
-            .projects-section {
-                padding: 2rem 1rem;
-            }
-            
-            .profile-container {
-                padding: 0 1rem;
-            }
-
-            .profile-description {
-                font-size: 1rem;
-                padding: 1rem;
-            }
-
-            .social-link {
-                width: 45px;
-                height: 45px;
-                line-height: 45px;
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .profile-photo {
-                width: 120px;
-                height: 120px;
-                font-size: 2.5rem;
-            }
-            
-            .profile-name {
-                font-size: 1.8rem;
-            }
-            
-            .card-content {
-                padding: 1rem;
-            }
-
-            .profile-description {
-                font-size: 0.95rem;
-                padding: 1rem;
-            }
-
-            .social-link {
-                width: 40px;
-                height: 40px;
-                line-height: 40px;
-                font-size: 1.2rem;
-            }
+            .cards-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="header">
         <div class="profile-container">
             <div class="profile-photo" onclick="document.getElementById('photoInput').click()">
                 <input type="file" id="photoInput" accept="image/*" onchange="changePhoto(event)">
-                <span id="photoPlaceholder" style="display: none;">📷</span>
             </div>
             <h1 class="profile-name">Laura Jimena Flórez Calderón</h1>
             <p class="profile-title">Aprendiz Análisis y Desarrollo de Software</p>
             <p class="profile-description">
                 Apasionada por crear experiencias digitales únicas y funcionales. 
-               Aprendiz en Desarrollo de Software, con un enfoque en diseño intuitivo y código limpio.
+                Aprendiz en Desarrollo de Software, con un enfoque en diseño intuitivo y código limpio.
                 Siempre buscando nuevos desafíos y oportunidades para crecer.
             </p>
         </div>
     </header>
 
-    <!-- Projects Section -->
     <section class="projects-section">
         <h2 class="section-title">Mis Proyectos</h2>
         <div class="cards-grid">
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">SUPERHÉROES</h3>
-                    <p class="card-description">Los superhéroes son individuos extraordinarios con habilidades especiales que luchan contra el mal para proteger a otros. Su valentía inspira esperanza.</p>
-                    <a href="https://laura090825.github.io/CARD/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">¿QUIÉN SOY?</h3>
-                    <p class="card-description">Mis valores fundamentales son mi brújula, mis vivencias me han moldeado y mis sueños son el motor que impulsa mis aspiraciones.</p>
-                    <a href="https://laura090825.github.io/QUIENSOY/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">CURRÍCULUM</h3>
-                    <p class="card-description">Tu currículum es como una breve historia de tu vida profesional. Destaca experiencias laborales relevantes y habilidades clave.</p>
-                    <a href="https://laura090825.github.io/CURRICULUMM/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">VIDEO VERCEL</h3>
-                    <p class="card-description">Vercel es una plataforma cloud rápida y fácil para desplegar webs modernas, optimizada para frameworks como React y Next.js.</p>
-                    <a href="https://youtu.be/Th1XA5SYZZA" class="card-button">Ver Video</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">PÁGINA DE BOLSOS</h3>
-                    <p class="card-description">Mi página de bolsos ofrece una cuidada selección de estilos para cada ocasión, con calidad y diseño como prioridades.</p>
-                    <a href="https://laura090825.github.io/PAGINABOLSOS/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">FORMULARIO</h3>
-                    <p class="card-description">Un formulario web permite a los usuarios ingresar información a través de campos para interactuar con un sitio. Esencial para la comunicación en línea.</p>
-                    <a href="https://laura090825.github.io/FORMULARIO/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">TARJETA POKÉMON</h3>
-                    <p class="card-description">Un universo lleno de criaturas fascinantes con poderes únicos. ¡Atrápalos a todos y conviértete en un maestro Pokémon!</p>
-                    <a href="https://laura090825.github.io/Tarjeta-Pok-mon/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">RESTAURANTE-CRUD-MESAS</h3>
-                    <p class="card-description">Restaurante Las Flores es un lugar acogedor donde la buena comida se une con la tecnología. Sistema CRUD eficiente para gestión de mesas.</p>
-                    <a href="https://formulario-crud-mu.vercel.app/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">VETERINARIA</h3>
-                    <p class="card-description">En "Dando Amor", cada paciente recibe el cariño y la dedicación que se merece, garantizando su bienestar y una vida plena junto a sus familias.</p>
-                    <a href="https://veterinaria-kohl.vercel.app/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="card-image"></div>
-                <div class="card-content">
-                    <h3 class="card-title">AHORCADO</h3>
-                    <p class="card-description">Un clásico reinventado con Vue: categorías, niveles y estilo propio. ¡Adivina o Muere!</p>
-                    <a href="https://ahorcado-gules-pi.vercel.app/" class="card-button">Ver Proyecto</a>
-                </div>
-            </div>
+            <div class="card"><div class="card-image superheroes"></div><div class="card-content"><h3 class="card-title">SUPERHÉROES</h3><p class="card-description">Los superhéroes son individuos extraordinarios...</p><a href="https://laura090825.github.io/CARD/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image quiensoy"></div><div class="card-content"><h3 class="card-title">¿QUIÉN SOY?</h3><p class="card-description">Mis valores fundamentales son mi brújula...</p><a href="https://laura090825.github.io/QUIENSOY/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image curriculum"></div><div class="card-content"><h3 class="card-title">CURRÍCULUM</h3><p class="card-description">Tu currículum es como una breve historia...</p><a href="https://laura090825.github.io/CURRICULUMM/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image vercel"></div><div class="card-content"><h3 class="card-title">VIDEO VERCEL</h3><p class="card-description">Vercel es una plataforma cloud rápida...</p><a href="https://youtu.be/Th1XA5SYZZA" class="card-button">Ver Video</a></div></div>
+            <div class="card"><div class="card-image bolsos"></div><div class="card-content"><h3 class="card-title">PÁGINA DE BOLSOS</h3><p class="card-description">Mi página de bolsos ofrece una cuidada...</p><a href="https://laura090825.github.io/PAGINABOLSOS/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image formulario"></div><div class="card-content"><h3 class="card-title">FORMULARIO</h3><p class="card-description">Un formulario web permite a los usuarios...</p><a href="https://laura090825.github.io/FORMULARIO/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image pokemon"></div><div class="card-content"><h3 class="card-title">TARJETA POKÉMON</h3><p class="card-description">Un universo lleno de criaturas fascinantes...</p><a href="https://laura090825.github.io/Tarjeta-Pok-mon/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image restaurante"></div><div class="card-content"><h3 class="card-title">RESTAURANTE-CRUD-MESAS</h3><p class="card-description">Restaurante Las Flores es un lugar acogedor...</p><a href="https://formulario-crud-mu.vercel.app/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image veterinaria"></div><div class="card-content"><h3 class="card-title">VETERINARIA</h3><p class="card-description">En "Dando Amor", cada paciente recibe...</p><a href="https://veterinaria-kohl.vercel.app/" class="card-button">Ver Proyecto</a></div></div>
+            <div class="card"><div class="card-image ahorcado"></div><div class="card-content"><h3 class="card-title">AHORCADO</h3><p class="card-description">Un clásico reinventado con Vue...</p><a href="https://ahorcado-gules-pi.vercel.app/" class="card-button">Ver Proyecto</a></div></div>
+            <!-- Nueva Card -->
+            <div class="card"><div class="card-image comida-rapida"></div><div class="card-content"><h3 class="card-title">COMIDA RÁPIDA</h3><p class="card-description">Proyecto interactivo que presenta una selección de comida rápida con diseño atractivo.</p><a href="https://comida-rapida.onrender.com" class="card-button">Ver Proyecto</a></div></div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="social-links">
             <a href="#" class="social-link">📧</a>
@@ -448,11 +296,8 @@
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
-                    const profilePhoto = document.querySelector('.profile-photo');
-                    profilePhoto.style.backgroundImage = `url(${e.target.result})`;
-                    profilePhoto.style.backgroundSize = 'cover';
-                    profilePhoto.style.backgroundPosition = 'center';
+                reader.onload = e => {
+                    document.querySelector('.profile-photo').style.backgroundImage = `url(${e.target.result})`;
                 };
                 reader.readAsDataURL(file);
             }
